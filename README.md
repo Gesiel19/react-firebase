@@ -1,70 +1,23 @@
-# Getting Started with Create React App
+Proyecto de autenticación base para Login y Register con React + Firebase
+1.Lo primero que hicimos fue crear el proyecto con npx create-react-app my-app
+2.Luego creamos el proyecto en firebase, donde obtuvimos el código de configuración, permisos para autentificación y base de datos.
+3.Este proyecto base contiene el flujo de trabajo estructurado en las siguientes carptetas:
+    -Carpeta raíz src.
+    -components: archivos Admin.jsx, UserView.jsx
+    -firebase: archivo de credencial.js
+    -screens: Home.jsx, Login.jsx
+    -Apps.js
+    -style: globals.css
+    -reset.css
+4.inicalmente establecemos la comunicación con firebase, realizando las importanciones pertinente junto con los métodos para realizar las solicitudes necesarias.
+5.Usamos las promesas por medio de async/await para controlar los cambios de estados.
+6. Creamos constante para estos cambios, ya que debemos monitorear la información que recopilamos para poder mostrar vistas especificas de acuerdo al perfil de registro.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Algunos conceptos claves:
+    Funciones utilizadas:
+   * getAuth: se utiliza para obtener una instancia del SDK de autenticación de Firebase.
+   * onAuthStateChanged: método del SDK de autenticación de Firebase que te permite suscribirte a cambios en el estado de autenticación del usuario actual. Esto significa que puedes recibir notificaciones cada vez que el usuario inicia sesión, cierra sesión o cambia su estado de autenticación de alguna otra manera.
+   * createUserWithEmailAndPassword: método del SDK de autenticación de Firebase se utiliza para crear una nueva cuenta de usuario con una dirección de correo electrónico y una contraseña. Este método devuelve un Promiseque se resuelve en un UserCredentialobjeto si el usuario se crea correctamente, o lo rechaza con un error si la creación falla.
+   * signInWithEmailAndPassword:método del SDK de autenticación de Firebase se utiliza para iniciar sesión en un usuario existente con una dirección de correo electrónico y una contraseña. Este método devuelve un Promiseque se resuelve en un UserCredentialobjeto si el usuario inició sesión correctamente, o lo rechaza con un error si el inicio de sesión falla.
 
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+   Nota importante: este proyecto esta enlazado con el proyecto marketplace-service de firebase, consola Gesiel Gimenez
